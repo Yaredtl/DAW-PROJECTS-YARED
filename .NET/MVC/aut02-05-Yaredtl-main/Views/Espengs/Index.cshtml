@@ -1,0 +1,95 @@
+﻿@model IEnumerable<AUT02_05.Models.Espeng>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Términos";
+}
+
+<h1>Términos</h1>
+
+@if (SignInManager.IsSignedIn(User))
+{
+    if (User.IsInRole("Admin"))
+    {
+        <p>
+            <a asp-action="Create">Añadir término</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ing)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.esp)
+                    </th>
+                    <th>
+                        <p><strong>Frases de Ejemplo</strong></p>
+                    </th>
+                    <th>
+                        <p><strong>Acciones</strong></p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ing)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.esp)
+                    </td>
+                    <td>
+                       @item.frase.Count
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.id">Detalles</a> |
+                        <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        </table>
+    }
+    else
+    {
+        if (User.IsInRole("Premium"))
+        {
+            foreach (var item in Model)
+            {
+                <div class="border my-4 p-2">
+                    <h3>@item.ing</h3>
+                    <h4>@item.esp</h4>
+                    <a class="btn btn-outline-success" asp-action="Details" asp-route-id="@item.id">Frases de ejemplo (@item.frase.Count)</a>
+                </div>
+            }
+        }
+        else
+        {
+            if (User.IsInRole("Basic"))
+            {
+                @foreach (var item in Model)
+                {
+                    <div class="border my-4 p-2">
+                        <h3>@item.ing</h3>
+                        <h4>@item.esp</h4>
+                        <button class="btn btn-success" disabled>Frases de ejemplo (@item.frase.Count)</button>
+                    </div>
+                }
+            }
+        }
+    }
+
+     
+   
+    
+}
+
+
+
+
+

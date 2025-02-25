@@ -1,0 +1,33 @@
+﻿@model AUT02_05.Models.Espeng
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h1>Eliminar</h1>
+
+<h3>¿Estas seguro que quieres eliminar el termino?</h3>
+<div>
+    <h4>Término</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.esp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.esp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ing)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ing)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Volver al indice</a>
+    </form>
+</div>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/descuento.css">
+    <link rel="shortcut icon" href="../IMGS/Disney+_logo.webp" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
+    <script src="../JS/desc.js"></script>
+    <title>Disney | Pago</title>
+</head>
+<body>
+    <header>
+        <img src="../IMGS/Disney+_logo.webp" alt="Logo Disney"/>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./catalogo.html">Catálogo</a></li>
+                <li><a href="./empresa.html">Nosotros</a></li>
+                <li><a href="./carrito.html">Carrito</a></li>
+            </ul>
+        </div>
+        <button id="theme">Contraste</button>
+    </header>
+    <main>
+        <nav>
+            <div class="nav-container"> 
+                <div class="item"><span class="num">1</span> - Carrito</div>
+                <div class="item"><span class="num">2</span> - Datos de envío</div>
+                <div class="item"><span class="num-at">3</span> - Método de pago</div>
+                <div class="item"><span class="num">4</span> - Finalizacion</div>
+            </div>
+        </nav>
+        <form id="checkout-form">
+            <fieldset>
+                <legend>Detalles de la Compra</legend>
+                <label for="total-compra">Total del carrito (€):</label>
+                <input type="number" id="total-compra" name="total-compra" readonly>
+
+                <label for="codigo-descuento">Código de descuento:</label>
+                <input type="text" id="codigo-descuento" name="codigo-descuento" placeholder="Introduzca su código">
+                <button type="button" id="aplicar-descuento" class="next">Aplicar Descuento</button>
+
+                <p id="mensaje-descuento"></p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Método de Pago</legend>
+                <label>
+                    <input type="radio" name="metodo-pago" value="tarjeta" required> Tarjeta
+                </label>
+                <label>
+                    <input type="radio" name="metodo-pago" value="paypal"> PayPal
+                </label>
+                <label>
+                    <input type="radio" name="metodo-pago" value="transferencia"> Transferencia Bancaria
+                </label>
+                <div id="pago-tarjeta" class="pago-detalle" style="display: none;">
+                    <label for="nombre-tarjeta">Nombre en la tarjeta:</label>
+                    <input type="text" id="nombre-tarjeta" name="nombre-tarjeta">
+                    
+                    <label for="numero-tarjeta">Número de tarjeta:</label>
+                    <input type="text" id="numero-tarjeta" name="numero-tarjeta" placeholder="16 dígitos">
+                    
+                    <label for="fecha-caducidad">Fecha de caducidad (MM/AA):</label>
+                    <input type="text" id="fecha-caducidad" name="fecha-caducidad" placeholder="MM/AA">
+                    
+                    <label for="cvc">CVC:</label>
+                    <input type="text" id="cvc" name="cvc" placeholder="3 dígitos">
+                </div>
+                <div id="pago-paypal" class="pago-detalle" style="display: none;">
+                    <label for="email-paypal">Correo electrónico:</label>
+                    <input type="email" id="email-paypal" name="email-paypal" placeholder="email@ejemplo.com">
+                </div>
+                <div id="pago-transferencia" class="pago-detalle" style="display: none;">
+                    <label for="justificante-pdf">Justificante (PDF):</label>
+                    <input type="file" id="justificante-pdf" name="justificante-pdf" accept="application/pdf">
+                </div>
+            </fieldset>
+            <button type="submit"><a href="confirmacion.html">Finalizar compra</a></button>
+        </form>
+    </main>
+    <footer>
+        <ul>
+            <li class="bolder">Sobre nosotros</li>
+            <li>Nuestros empleados</li>
+            <li>Nuestras marcas</li>
+            <li>Afiliados</li>
+            <li>Redes sociales</li>
+            <li>Compromisos</li>
+        </ul>
+        <ul>
+            <li class="bolder">Servicios</li>
+            <li>Reparacion</li>
+            <li>Servicios online</li>
+            <li>Servicios a domicilios</li>
+            <li>Servicios 24 horas</li>
+            <li>Seguros</li>
+        </ul>
+        <ul>
+            <li class="bolder">Nuestras tiendas</li>
+            <li>Madrid</li>
+            <li>Barcelona</li>
+            <li>Munich</li>
+            <li>Santa Cruz de Tenerife</li>
+            <li>Buscar tienda</li>
+        </ul>
+        <ul>
+            <li class="bolder">Privacidad</li>
+            <li>Publicidad</li>
+            <li>Privacidad</li>
+            <li>Aviso legal</li>
+            <li>Cookies</li>
+            <li>Preguntas frecuentes</li>
+        </ul>
+    </footer>
+</body>
+</html>

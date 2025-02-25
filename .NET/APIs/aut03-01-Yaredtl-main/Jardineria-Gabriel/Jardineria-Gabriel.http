@@ -1,0 +1,6 @@
+@Jardineria_Gabriel_HostAddress = http://localhost:5069
+
+GET {{Jardineria_Gabriel_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

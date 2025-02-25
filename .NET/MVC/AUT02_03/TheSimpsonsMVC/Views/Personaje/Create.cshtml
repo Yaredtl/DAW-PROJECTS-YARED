@@ -1,0 +1,21 @@
+﻿@model TheSimpsonsMVC.Models.Character;
+
+@{
+	ViewData["title"] = "Crear personaje";
+}
+<form asp-action="Create">
+	<label asp-for="name" class="form-label">@Html.DisplayNameFor(Model => Model.name)</label>
+	<input asp-for="name"class="form-control" type="text" placeholder="Inserta un nombre" /> 
+	<span asp-validation-for="name" class="text-danger"></span>
+	<br/>
+	<label asp-for="job" class="form-label">@Html.DisplayNameFor(Model => Model.job)</label>
+	<input asp-for="job" class="form-control" placeholder="Inserta un trabajo" type="text"/>
+	<span asp-validation-for="job" class="text-danger"></span>
+	<br/>
+	<label asp-for="age" class="form-label">@Html.DisplayNameFor(Model => Model.age)</label>
+	<input asp-for="age" class="form-control form-number" type="number" placeholder="0"/>
+	<span asp-validation-for="age" class="text-danger"></span>
+	<br/>
+	<br/>
+	<input type="submit" class="btn btn-primary" value="Crear"/>
+</form>

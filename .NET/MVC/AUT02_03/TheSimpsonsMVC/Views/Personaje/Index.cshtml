@@ -1,0 +1,45 @@
+﻿@model List<TheSimpsonsMVC.Models.Character>;
+
+@{
+	ViewData["title"] = "Listado";
+}
+<h1 class="simpson">  Bienvenido a The Simpsons App</h1>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Trabajo</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ( var pj in Model )
+        {
+            <tr>
+                <th scope="row">
+                    @Html.DisplayFor(Model => pj.Id)
+                </th>
+                <td>
+                    @Html.DisplayFor(Model => pj.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => pj.age)
+                </td>
+                <td>
+                    @Html.DisplayFor(Model => pj.job)
+                </td>
+                <td>
+                    <form asp-controller="Personaje">
+                        <button  class="btn btn-success" asp-controller="Personaje" asp-action="Show" name="num" value="@pj.Id" role="button"><img class="logo" src="~/imgs/visibility_16dp_E8EAED.png" /></button>
+                        <button  class="btn btn-warning" asp-controller="Personaje" asp-action="Update" formmethod="get" name="num" value="@pj.Id" role="button"><img class="logo" src="~/imgs/create_16dp_E8EAED.png" /></button>
+                        <button  class="btn btn-danger" asp-controller="Personaje" asp-action="Delete" name="num" value="@pj.Id" role="button"><img class="logo" src="~/imgs/delete_16dp_E8EAED.png" /></button>
+                    </form>
+                </td>
+            </tr>
+        }              
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-controller="Personaje" asp-action="Create" role="button">Nuevo personaje</a>

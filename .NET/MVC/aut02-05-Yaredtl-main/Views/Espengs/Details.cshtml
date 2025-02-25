@@ -1,0 +1,92 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model AUT02_05.Models.Espeng
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+<h1>Detalles</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ing)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ing)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.esp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.esp)
+        </dd>
+    </dl>
+</div>
+<div>
+    <h1>Frases de ejemplo:</h1>
+    @if (User.IsInRole("Admin"))
+    {
+        @foreach (var item in ViewBag.Frases)
+        {
+            <div class="border p-3 mb-2 bg-white rounded d-flex justify-content-between">
+                <div>
+                    <p><span>English: @item.fraing</span></p>
+                    <p><span>Spanish: @item.fraesp</span></p>
+                </div>
+                <div>
+                    <a asp-action="Edit" asp-controller="Frases" asp-route-id="@item.id" class="btn btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-controller="Frases" asp-route-id="@item.id" class="btn btn-danger">Borrar</a>
+                    <p>
+                        <span>
+                            by @if (item.IdUser == "0")
+                            {
+                                <span>Anonymous</span>
+                            }
+                            else
+                            {
+                                <span>@SignInManager.UserManager.FindByIdAsync(item.IdUser).Result.UserName</span>
+                            }
+                        </span>
+                    </p>
+                </div>
+            </div>
+        }
+
+    }
+    else
+    {
+        if (User.IsInRole("Premium"))
+        {
+            @foreach (var item in ViewBag.Frases)
+            {
+                <div class="border p-3 mb-2 bg-white rounded d-flex justify-content-between">
+                    <div>
+                        <p><span>English: @item.fraing</span></p>
+                        <p><span>Spanish: @item.fraesp</span></p>
+                    </div>
+                    <div>
+                        <p>
+                            <span>
+                                by @if (item.IdUser == "0")
+                                {
+                                    <span>Anonymous</span>
+                                }
+                                else
+                                {
+                                    <span>@SignInManager.UserManager.FindByIdAsync(item.IdUser).Result.UserName</span>
+                                }
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            }
+        }
+    }
+</div>
+<div>
+    <a asp-action="Create" asp-controller="Frases" asp-route-id="@Model.id" class="btn btn-primary">Añadir ejemplo</a>
+    <a asp-action="Index" class="btn btn-dark">Volver</a>
+</div>

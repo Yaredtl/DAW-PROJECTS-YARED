@@ -1,0 +1,23 @@
+﻿@model TheSimpsonsMVC.Models.Character;
+
+@{
+	ViewData["title"] = "Editar personaje";
+}
+<h3>Editar personaje : @Model.Id</h3>
+<form asp-action="Update" asp-controller="Personaje">
+	<input type="hidden" asp-for="Id" />
+	<label asp-for="name">@Html.DisplayNameFor(Model => Model.name)</label>
+	<input asp-for="name" class="form-control" type="text"  />
+	<span asp-validation-for="name" class="text-danger"></span>
+	<br />
+	<label asp-for="age">@Html.DisplayNameFor(Model => Model.age)</label>
+	<input asp-for="age" class="form-control form-number" type="number"/>
+	<span asp-validation-for="age" class="text-danger"></span>
+	<br />
+	<label asp-for="job">@Html.DisplayNameFor(Model => Model.job)</label>
+	<input asp-for="job" class="form-control"/>
+	<span asp-validation-for="job" class="text-danger"></span>
+	<br />
+	<br />
+	<input type="submit" asp-action="Update" asp-controller="Personaje" formmethod="post" class="btn-primary" value="Actualizar"/>
+</form>

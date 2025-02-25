@@ -1,0 +1,39 @@
+﻿@model AUT02_05.Models.Frase
+
+@{
+    ViewData["Title"] = "Editar ejemplo";
+}
+
+<h1>Editar ejemplo</h1>
+<h3>Termino : @ViewBag.Termino[0].ing</h3>
+<h3>Significado : @ViewBag.Termino[0].esp</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="fraing" class="control-label"></label>
+                <input asp-for="fraing" class="form-control" />
+                <span asp-validation-for="fraing" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fraesp" class="control-label"></label>
+                <input asp-for="fraesp" class="form-control" />
+                <span asp-validation-for="fraesp" class="text-danger"></span>
+            </div>
+            <div>
+                <input type="hidden" asp-for="EspengID" />
+                <input type="hidden" asp-for="IdUser" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Editar" class="btn btn-primary" />
+                <a asp-action="Details" asp-controller="Espengs" asp-route-id="@ViewBag.EspengID" class="btn btn-danger">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

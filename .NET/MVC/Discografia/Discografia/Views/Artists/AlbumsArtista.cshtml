@@ -1,0 +1,13 @@
+﻿@model Discografia.Models.Artist
+
+@{
+    ViewData["Title"] = "Albumes de artistas";
+}
+<h2>Albums del artista</h2>
+ <ul>
+     @foreach (var item in Model.Albums)
+     {
+         <li>@Html.DisplayFor(modelItem => item.Title)</li>
+     }
+</ul>
+<a asp-action="Index"/>Volver al listado</a>

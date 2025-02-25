@@ -1,0 +1,618 @@
+{
+	"info": {
+		"_postman_id": "e21a02ea-daa5-433e-aaa3-15ce5aecd2ba",
+		"name": "AUT03_01_Gabriel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38384039"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"prueba2@jardin.com\",\r\n  \"password\": \"Asdf1234!\",\r\n  \"fullName\": \"PruebaGuapito2\",\r\n  \"address\": \"CasaPrueba2\",\r\n  \"postalCode\": 39013,\r\n  \"phone\": 123456789\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Auth/Register",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Auth",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@jardin.com\",\r\n  \"password\": \"Asdf1234!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Auth/Login",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Auth",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhNTc1YjU4Mi00YmQ1LTRmYzAtOWI4OS03MjZlZjNkMWNjZGEiLCJpYXQiOjE3MzMyNDkzNzQsInN1YiI6InBydWViYTFAamFyZGluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkJhc2ljIiwiZXhwIjoxNzMzMjU2NTc0LCJpc3MiOiJHYWJyaWVsIiwiYXVkIjoiSmFyZGluQXBwIn0.vQDsJiwIoc0C-Ju3NATSDifzA6JO6VfjkpZzv5J0Op8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Auth/Users",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Auth",
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upgrade",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2MjA1Y2QwOS1jOTNkLTRkNGQtYTQxMC01M2VhMWIyYjEzN2MiLCJpYXQiOjE3MzMzMzUxNjEsInN1YiI6InBydWViYTJAamFyZGluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkJhc2ljIiwiZXhwIjoxNzMzMzQyMzYxLCJpc3MiOiJHYWJyaWVsIiwiYXVkIjoiSmFyZGluQXBwIn0.yT51ZbhP9WQKjAewRUTymOlKXHgmbom3k2WbfqGkZps",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Auth/Upgrade",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Auth",
+								"Upgrade"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gamas",
+			"item": [
+				{
+					"name": "Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiNjdhZGMyZi0zYWM4LTRmN2MtYjU0MS03YTM3YThkYTMzMDQiLCJpYXQiOjE3MzMzMzIyMjIsInN1YiI6InBydWViYTFAamFyZGluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlByZW1pdW0iLCJleHAiOjE3MzMzMzk0MjIsImlzcyI6IkdhYnJpZWwiLCJhdWQiOiJKYXJkaW5BcHAifQ.LnfefFmI2k8n23Ui9MIADOxTT_C3JyNgNXIFimU1YL0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Gamas",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Gamas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5NTgwMTY3NC1kMWVkLTQ4NDUtOWNmMy1mN2UxMDQ3ZmJjZjAiLCJpYXQiOjE3MzMyNTA4NDIsInN1YiI6InBydWViYTFAamFyZGluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlByZW1pdW0iLCJleHAiOjE3MzMyNTgwNDIsImlzcyI6IkdhYnJpZWwiLCJhdWQiOiJKYXJkaW5BcHAifQ.Xuvd2tOHnpVreOK87vEI3UUuUm7gFJ8oFi7oM-OLjdw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Gamas/Aromaticas",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Gamas",
+								"Aromaticas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5NTgwMTY3NC1kMWVkLTQ4NDUtOWNmMy1mN2UxMDQ3ZmJjZjAiLCJpYXQiOjE3MzMyNTA4NDIsInN1YiI6InBydWViYTFAamFyZGluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlByZW1pdW0iLCJleHAiOjE3MzMyNTgwNDIsImlzcyI6IkdhYnJpZWwiLCJhdWQiOiJKYXJkaW5BcHAifQ.Xuvd2tOHnpVreOK87vEI3UUuUm7gFJ8oFi7oM-OLjdw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"gama\": \"Pruebita\",\r\n        \"descripcion_texto\": \"Plantas de Prueba editada\",\r\n        \"descripcion_html\": null,\r\n        \"imagen\": null,\r\n        \"productos\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Gamas/Pruebita",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Gamas",
+								"Pruebita"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5NTgwMTY3NC1kMWVkLTQ4NDUtOWNmMy1mN2UxMDQ3ZmJjZjAiLCJpYXQiOjE3MzMyNTA4NDIsInN1YiI6InBydWViYTFAamFyZGluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlByZW1pdW0iLCJleHAiOjE3MzMyNTgwNDIsImlzcyI6IkdhYnJpZWwiLCJhdWQiOiJKYXJkaW5BcHAifQ.Xuvd2tOHnpVreOK87vEI3UUuUm7gFJ8oFi7oM-OLjdw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Productos",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Productos/",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Productos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5NTgwMTY3NC1kMWVkLTQ4NDUtOWNmMy1mN2UxMDQ3ZmJjZjAiLCJpYXQiOjE3MzMyNTA4NDIsInN1YiI6InBydWViYTFAamFyZGluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlByZW1pdW0iLCJleHAiOjE3MzMyNTgwNDIsImlzcyI6IkdhYnJpZWwiLCJhdWQiOiJKYXJkaW5BcHAifQ.Xuvd2tOHnpVreOK87vEI3UUuUm7gFJ8oFi7oM-OLjdw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"codigo_producto\": 175,\r\n        \"nombre\": \"Bougamvillea Sanderiana, 3 tut. piramide\",\r\n        \"gama\": \"Ornamentales\",\r\n        \"dimensiones\": \"\",\r\n        \"proveedor\": \"Viveros EL OASIS\",\r\n        \"descripcion\": \"\",\r\n        \"cantidad_en_stock\": 100,\r\n        \"precio_venta\": 6.00,\r\n        \"precio_proveedor\": 4.00,\r\n        \"gamaNavigation\": null,\r\n        \"reviews\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Productos/",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Productos",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5NDg3Nzc2MC04NmM1LTQ2ZTktOWE3NC1hOGY4Yjg2NDBhNTQiLCJpYXQiOjE3MzMzMzQyMjYsInN1YiI6InBydWViYTFAamFyZGluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlByZW1pdW0iLCJleHAiOjE3MzMzNDE0MjYsImlzcyI6IkdhYnJpZWwiLCJhdWQiOiJKYXJkaW5BcHAifQ.HxgLe_Ri60IlWjrHWHtI_73lMl2fkvIETarxnLxntCc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Reviews/ProductReviews/132",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Reviews",
+								"ProductReviews",
+								"132"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Reviews",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0ZmQzYjZhZC1iYzc0LTRkYzItYjM5OS02ZmM3YjkxMjRjZjEiLCJpYXQiOjE3MzMzMzU3ODUsInN1YiI6InBydWViYTJAamFyZGluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlByZW1pdW0iLCJleHAiOjE3MzMzNDI5ODUsImlzcyI6IkdhYnJpZWwiLCJhdWQiOiJKYXJkaW5BcHAifQ.FKHemrHi6ZGG83clfjIuZwLH0o3280UvxTaRmbbG_FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reviewId\": 3,\r\n    \"title\": \"Pokemon34\",\r\n    \"description\": \"PremiuwuHasdasdARDCORE\",\r\n    \"stars\": 3,\r\n    \"productId\": 4,\r\n    \"producto\": null,\r\n    \"userId\": \"71c16ae1-96ea-4a68-b7bf-44fd3ef776aa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Reviews/3",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Reviews",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0ZmQzYjZhZC1iYzc0LTRkYzItYjM5OS02ZmM3YjkxMjRjZjEiLCJpYXQiOjE3MzMzMzU3ODUsInN1YiI6InBydWViYTJAamFyZGluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlByZW1pdW0iLCJleHAiOjE3MzMzNDI5ODUsImlzcyI6IkdhYnJpZWwiLCJhdWQiOiJKYXJkaW5BcHAifQ.FKHemrHi6ZGG83clfjIuZwLH0o3280UvxTaRmbbG_FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Pokemon4\",\r\n  \"description\": \"PremiuwuHARDCORE\",\r\n  \"stars\": 3,\r\n  \"productId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Reviews",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxZmVmODNhYS1lZGNjLTRiOTktYjk4Zi04NGE3MWRhYjU3YTMiLCJpYXQiOjE3MzMzMzYzODcsInN1YiI6ImFkbWluQGphcmRpbi5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTczMzM0MzU4NywiaXNzIjoiR2FicmllbCIsImF1ZCI6IkphcmRpbkFwcCJ9.Tkngd2u5yY1cCD3LKWsGfMUGL3dPX5pTcKly87cTOpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{host}}:{{port}}/api/Reviews/4",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"Reviews",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "7087",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "localhost\n",
+			"type": "string"
+		}
+	]
+}

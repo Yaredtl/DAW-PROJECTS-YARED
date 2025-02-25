@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Discografía";
+}
+<h1 class="text-xxl-center">La Discografia</h1>
+<br/>
+<div class="row row-cols-1 row-cols-md-2 g-4" style="width: 60rem";>
+    <div class="col">
+        <div class="card">
+            <img src="/imgs/mick-haupt-eXaryhdPD8g-unsplash-scaled.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Albumes</h5>
+                <p class="card-text">Consulta la coleccion de almbumes de nuestro catalogo</p>
+                <a class="btn btn-primary"  asp-controller="Albums" asp-action="Index">Ver albumes</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="/imgs/art.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Artistas</h5>
+                <p class="card-text">Conoce a los artistas más punteros en la actualidad </p>
+                <a class="btn btn-primary" asp-controller="Artists" asp-action="Index">Ver artistas</a>
+            </div>
+        </div>
+    </div>
+</div>

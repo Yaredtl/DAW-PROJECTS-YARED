@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Mynerve", serif;
+}
+:root {
+    --principal: rgb(76, 160, 240);
+    --secundario: rgb(174, 226, 250);
+    --texto: white;
+    --texto2: black;
+}
+img {
+    transition: transform ease-in-out 0.5s;
+}
+a {
+    color: var(--texto2);
+    text-decoration: none;
+}
+img:hover {
+    transform: scale(1.2);
+}
+
+
+body.oscuro {
+    --secundario: rgb(19, 81, 110);
+    color: var(--texto);
+    background-color: rgb(75, 73, 73);
+}
+body.oscuro a {
+    color: var(--texto);
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, var(--principal), var(--secundario));
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+header img {
+    width: 6rem;
+    margin: 1rem 0;
+}
+
+header .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+header .nav-menu ul li a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+    display: block;
+}
+
+header .nav-menu ul li a:hover {
+    transform: scale(1.1);
+}
+
+header button {
+    width: 50%;
+    padding: 0.8rem;
+    height: auto;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, var(--principal), var(--secundario));
+    color: var(--texto);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.4s ease-in-out;
+    margin-top: 1.5rem;
+}
+
+header button:hover {
+    background: linear-gradient(135deg, var(--secundario), var(--principal));
+}
+nav {
+    padding: 1.5rem 0;
+    text-align: center;
+}
+nav .num-at{
+    display: inline-block;
+    background-color: var(--secundario);
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+nav .num {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+    main{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .bloque-informacion{
+            border: 1px solid var(--principal);
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem;
+            width: 100%;
+        }
+        p{
+            margin: 1rem;
+        }
+        a{
+            margin: 1rem;
+            border: 1px var(--secundario) solid;
+            border-radius: 0.3rem;
+            padding: 0.3rem;
+        }
+    }
+
+    footer{
+        background: linear-gradient(135deg, var(--principal), var(--secundario));
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        margin-top: 2.5rem;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        padding: 1rem;
+        ul{
+            place-items: center;
+            list-style-type: none;
+            li.bolder{
+                padding-bottom: 0.3rem;
+                font-size: 1.3rem;
+                font-weight: bolder;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        header {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+        }
+    
+        header img {
+            width: 8rem;
+        }
+    
+        header .nav-menu ul {
+            flex-direction: row;
+            gap: 20px;
+        }
+    
+        header button {
+            width: auto;
+            padding-bottom: 1rem;
+        }
+        nav div.nav-container {
+            display: flex;
+            justify-content: space-around;
+        }
+        footer {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    /* MEDIA QUERY PARA LAPTOPS */
+    
+    @media (min-width: 1024px) {
+        header {
+            font-size: 2rem;
+            padding: 1.5rem 2rem;
+        }
+    
+        header .nav-menu ul li a {
+            font-size: 1.3rem;
+        }
+    
+        header button {
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        nav div.nav-container {
+            justify-content: space-evenly;
+        }
+        footer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    
+    /* MEDIA QUERY PARA DESKTOPS */
+    
+    @media (min-width: 1440px) {
+        header {
+            padding: 2rem;
+        }
+        header img {
+            width: 8rem;
+        }
+        footer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
